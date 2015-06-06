@@ -157,6 +157,12 @@ To create and save a new record, you would write:
 
     Breed = breed:new(id, "Golden Retriever"),
     {ok, SavedBreed} = Breed:save()
+    
+In the case where the database assigns default values for undefined values, you can fill in parameters with the `null` atom, for example
+
+    Breed = breed:new(id, null),
+    {ok, SavedBreed} = Breed:save()
+
 
 You can provide validation logic by adding a validation_tests/0 function
 to your model file, e.g.
